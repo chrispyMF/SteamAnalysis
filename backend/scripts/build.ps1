@@ -9,9 +9,7 @@ Usage:
 param(
   [ValidateSet("Debug","Release","RelWithDebInfo","MinSizeRel")]
   [string]$Config = "Release",
-
   [switch]$Clean,
-
   [string]$Generator = ""
 )
 
