@@ -9,6 +9,15 @@ add_executable(steamanalysis
     src/test.cpp
 )
 
+add_library(nlohmann INTERFACE)
+
+target_include_directories(steamanalysis INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party
+)
+
+target_link_libraries(steamanalysis PRIVATE nlohmann)
+
 target_include_directories(steamanalysis PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party
 )
