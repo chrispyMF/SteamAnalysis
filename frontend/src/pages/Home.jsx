@@ -10,6 +10,7 @@ export default function Home() {
     // Shows on page now for debugging purposes, REMOVE LATER
     const [payload, setPayload] = useState(null);
 
+    // Stores error messages when invalid input
     const [error, setError] = useState(null);
 
     // Checks if the input in field is a valid Steam64 ID or vanity URL, (TODO LATER: add more validation if sending potential invalid input slows backend code)
