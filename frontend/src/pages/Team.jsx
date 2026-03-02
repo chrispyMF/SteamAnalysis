@@ -21,7 +21,7 @@ export default function Team() {
             <div className="team-header">
                 <h1>Meet The Team</h1>
                 <p>
-                    ADD TEAM DESCRIPTION HERE!
+                    Fair;Day Labs is a student founded group focused on building projects using real world approaches the reflect our interests. (idk fix later)
                 </p>
             </div>
 

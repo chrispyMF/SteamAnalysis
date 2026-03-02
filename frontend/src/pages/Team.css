@@ -31,16 +31,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .team-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .team-card h3 {
     color: white;
+    margin: 0;
 
 }
 
@@ -55,7 +57,7 @@
 .team-role {
     font-size: 0.85rem;
     color: #c7d5e0;
-    margin: 0.25rem 0 0.75rem 0;
+    margin: 0;
 }
 
 .team-github {
