@@ -1,5 +1,5 @@
 .home-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 50px);
     width: 100%;
     background: linear-gradient(180deg, #1b2838, #171a21);
     display: flex;
