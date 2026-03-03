@@ -1,6 +1,6 @@
 import "./Team.css";
 
-// Data for team members, can be expanded later to include more social links
+// Data for team members, can be expanded later to include more social links TODO: add sorting by role or something later.
 const teamMembers = [
     {
         name: "Chris Materick",
