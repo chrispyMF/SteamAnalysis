@@ -1,4 +1,5 @@
 #include <SteamAnalysis/test.h>
+#include <drogon/drogon.h>
 
 using json = nlohmann::json;
 
@@ -29,4 +30,10 @@ void jsonTest() {
     // pretty print with 4 space indent
     std::cout << std::setw(4) << j << std::endl;
     std::cout << "nlohmann json library works!\n";
+}
+
+void drogonTest() {
+    std::cout << "Running Drogon webserver ...\n";
+    drogon::app().addListener("0.0.0.0", 8080).run();
+    std::cout << "Drogon webserver stopped.\n";
 }
