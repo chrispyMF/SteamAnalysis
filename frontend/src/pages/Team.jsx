@@ -10,11 +10,32 @@ const teamMembers = [
         avatar: "https://avatars.githubusercontent.com/u/121414227?v=4"
     },
     {
-        name: "Fair Day",
-        role: "SUPER AWESOME ROLE",
-        github: "https://github.com/Fair-Day-Labs",
-        githubUsername: "Fair;Day Labs",
-        avatar: "https://avatars.githubusercontent.com/u/212604035?s=200&v=4"
+        name: "David Rivera-Chino",
+        role: "Backend Developer",
+        github: "https://github.com/DavidKN10",
+        githubUsername: "DavidKN10",
+        avatar: "https://avatars.githubusercontent.com/u/113551618?v=4"
+    },
+    {
+        name: "Alexander Silerio",
+        role: "Machine Learning Engineer",
+        github: "https://github.com/MrYland3r",
+        githubUsername: "MrYland3r",
+        avatar: "https://avatars.githubusercontent.com/u/44789801?v=4"
+    },
+    {
+        name: "Aidan Maulsby",
+        role: "Backend Developer",
+        github: "https://github.com/Amaulsby",
+        githubUsername: "Amaulsby",
+        avatar: "https://avatars.githubusercontent.com/u/113478596?v=4"
+    },
+    {
+        name: "Aidan Schilling",
+        role: "Frontend Developer",
+        github: "https://github.com/AidanSchilling013",
+        githubUsername: "AidanSchilling013",
+        avatar: "https://avatars.githubusercontent.com/u/263193460?v=4"
     }
 ];
 
