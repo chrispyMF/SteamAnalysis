@@ -21,6 +21,9 @@ $RootDir = Resolve-Path (Join-Path $ScriptDir "..")
 $BuildDir = Join-Path $RootDir "build"
 $InstallDir = Join-Path $RootDir "install"
 
+# vcpkg cmake toolchain file
+$VcpkgCmake = "$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+
 Write-Host "Root:   $RootDir"
 Write-Host "Build:  $BuildDir"
 Write-Host "Config: $Config"
@@ -40,6 +43,7 @@ $cmakeArgs = @(
   "-B", $BuildDir,
   "-DCMAKE_BUILD_TYPE=$Config",
   "-DCMAKE_INSTALL_PREFIX=$InstallDir"
+  "-DCMAKE_TOOLCHAIN_FILE=$VcpkgCmake"
 )
 
 # Generator (optional). If empty, CMake picks a default.

@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 project(steamanalysis_backend LANGUAGES CXX)
 
-set(CMAKE_STANDARD 17)
-set(CMAKE_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Drogon CONFIG REQUIRED)
 
 add_executable(steamanalysis
     src/main.cpp
@@ -15,7 +17,10 @@ target_include_directories(steamanalysis INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/third_party
 )
 
-target_link_libraries(steamanalysis PRIVATE nlohmann)
+target_link_libraries(steamanalysis PRIVATE 
+  nlohmann 
+  Drogon::Drogon
+)
 
 target_include_directories(steamanalysis PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
