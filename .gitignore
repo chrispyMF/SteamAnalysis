@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 .vs/
 
-# build files
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
