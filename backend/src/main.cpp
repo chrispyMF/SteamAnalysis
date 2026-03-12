@@ -2,8 +2,7 @@
 #include <SteamAnalysis/test.h>
 
 int main() {
-    std::cout << "hello world\n";
-    test();
-    jsonTest();
-    drogonTest();
+	jsonTest();
+	int curlTestResult = curlTest();
+	return 0;
 }

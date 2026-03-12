@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Drogon CONFIG REQUIRED)
+find_package(CURL REQUIRED)
 
 add_executable(steamanalysis
     src/main.cpp
@@ -20,6 +21,7 @@ target_include_directories(steamanalysis INTERFACE
 target_link_libraries(steamanalysis PRIVATE 
   nlohmann 
   Drogon::Drogon
+  CURL::libcurl
 )
 
 target_include_directories(steamanalysis PRIVATE

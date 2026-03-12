@@ -1,5 +1,4 @@
 #include <SteamAnalysis/test.h>
-#include <drogon/drogon.h>
 
 using json = nlohmann::json;
 
@@ -34,6 +33,40 @@ void jsonTest() {
 
 void drogonTest() {
     std::cout << "Running Drogon webserver ...\n";
-    drogon::app().addListener("0.0.0.0", 8080).run();
+    drogon::app().addListener("0.0.0.0", 8080);
+    drogon::app().run();
     std::cout << "Drogon webserver stopped.\n";
+}
+
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
+    size_t totalSize = size * nmemb;
+    output->append((char*)contents, totalSize);
+    return totalSize;
+}
+
+int curlTest() {
+    CURL* curl = curl_easy_init();
+
+    if (!curl) {
+        std::cerr << "Failed to initilized CURL\n";
+        return 1;
+    }
+
+    std::string response;
+
+    curl_easy_setopt(curl, CURLOPT_URL, "https://httpbin.org/get?test=testing");
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
+
+    CURLcode res = curl_easy_perform(curl);
+
+    if (res != CURLE_OK) {
+        std::cerr << "CURL Error: " << curl_easy_strerror(res) << std::endl;
+    }
+    else {
+        std::cout << "Response:\n" << response << std::endl;
+    }
+
+    curl_easy_cleanup(curl);
+    return 0;
 }
