@@ -1,8 +1,11 @@
 #include <iostream>
-#include <SteamAnalysis/test.h>
+#include <filesystem>
+#include <SteamAnalysis/clients/SteamWebApiClient.h>
+#include <SteamAnalysis/clients/helper.h>
 
 int main() {
-	jsonTest();
-	int curlTestResult = curlTest();
+	CurlHttpClient client;
+	client.get("https://httpbin.org/get");
+
 	return 0;
 }

@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 .vs/
 
-# build files
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -43,3 +42,7 @@ bld/
 [Ll]ogs/
 [Bb]uild/
 [Ii]nstall/
+uploads/
+
+# env file
+.env

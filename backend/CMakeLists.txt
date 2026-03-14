@@ -10,6 +10,8 @@ find_package(CURL REQUIRED)
 add_executable(steamanalysis
     src/main.cpp
     src/test.cpp
+    src/clients/SteamWebApiClient.cpp
+    src/clients/helper.cpp
 )
 
 add_library(nlohmann INTERFACE)

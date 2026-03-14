@@ -38,12 +38,6 @@ void drogonTest() {
     std::cout << "Drogon webserver stopped.\n";
 }
 
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
-    size_t totalSize = size * nmemb;
-    output->append((char*)contents, totalSize);
-    return totalSize;
-}
-
 int curlTest() {
     CURL* curl = curl_easy_init();
 

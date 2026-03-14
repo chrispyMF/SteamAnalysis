@@ -5,13 +5,12 @@
 #include <nlohmann/json.hpp>
 #include <drogon/drogon.h>
 #include <curl/curl.h>
+#include <SteamAnalysis/clients/helper.h>
 
 void test(); 
 
 void jsonTest();
 
 void drogonTest();
-
-size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output);
 
 int curlTest();
