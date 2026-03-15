@@ -21,6 +21,8 @@ public:
 class SteamApiClient {
 public:
 	json getPlayerSummaries(const std::string& steamId);
+	json getGetOwnedGames(const std::string& steamId);
+	json getRecentlyPlayedGames(const std::string& steamId);
 private:
 	SteamClientConfig config_;
 	std::shared_ptr<CurlHttpClient> http_;

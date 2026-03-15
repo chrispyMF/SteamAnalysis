@@ -32,6 +32,25 @@ json SteamApiClient::getPlayerSummaries(const std::string& steamId) {
 	return jsonResult;
 }
 
+json SteamApiClient::getGetOwnedGames(const std::string& steamId) {
+	std::string url = buildUrl("/IPlayerService/GetOwnedGames/v0001/" , 
+		{ {"key", config_.STEAM_API_KEY}, {"steamid", steamId}, {"include_appinfo", "true"}, 
+			{"include_played_free_games", "true"}, {"format", "json"}}
+	);
+	std::string strResponse = http_->get(url);
+	json jsonResult = json::parse(strResponse);
+	return jsonResult;
+}
+
+json SteamApiClient::getRecentlyPlayedGames(const std::string& steamId) {
+	std::string url = buildUrl("/IPlayerService/GetRecentlyPlayedGames/v0001/",
+		{{"key", config_.STEAM_API_KEY}, {"steamid", steamId}, {"format", "json"} }
+	);
+	std::string strResponse = http_->get(url);
+	json jsonResult = json::parse(strResponse);
+	return jsonResult;
+}
+
 std::string SteamApiClient::buildUrl(const std::string& path, const std::map<std::string, std::string>& queryParams) const {
 	std::string url;
 	url.append(config_.STEAM_API_BASE_URL + path + "?");
@@ -40,5 +59,3 @@ std::string SteamApiClient::buildUrl(const std::string& path, const std::map<std
 	}
 	return url;
 }
-
-
