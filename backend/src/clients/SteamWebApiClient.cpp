@@ -17,11 +17,28 @@ std::string CurlHttpClient::get(const std::string& url) {
 		std::cerr << "CURL Error: " << curl_easy_strerror(res) << std::endl;
 		return "";
 	}
-	else {
-		std::cout << "Response\n" << response << std::endl;
-	}
-
+	
 	curl_easy_cleanup(curl);
 
 	return response;
 }
+
+json SteamApiClient::getPlayerSummaries(const std::string& steamId) {
+	std::string url = buildUrl("/ISteamUser/GetPlayerSummaries/v0002/",
+		{ {"key", config_.STEAM_API_KEY}, {"steamids", steamId}, {"format", "json"} }
+	);
+	std::string strResponse = http_->get(url);
+	json jsonResult = json::parse(strResponse);
+	return jsonResult;
+}
+
+std::string SteamApiClient::buildUrl(const std::string& path, const std::map<std::string, std::string>& queryParams) const {
+	std::string url;
+	url.append(config_.STEAM_API_BASE_URL + path + "?");
+	for (const auto& pair : queryParams) {
+		url.append("&" + pair.first + "=" + pair.second);
+	}
+	return url;
+}
+
+

@@ -17,3 +17,13 @@ class CurlHttpClient {
 public:
 	std::string get(const std::string& url);
 };
+
+class SteamApiClient {
+public:
+	json getPlayerSummaries(const std::string& steamId);
+private:
+	SteamClientConfig config_;
+	std::shared_ptr<CurlHttpClient> http_;
+
+	std::string buildUrl(const std::string& path, const std::map < std::string, std::string>& queryParams) const;
+};
