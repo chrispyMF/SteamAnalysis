@@ -6,6 +6,11 @@ size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* out
     return totalSize;
 }
 
+std::string buildQuery(const std::string& key, const std::string& value) {
+    std::string query = "&";
+    return query.append(key + "=" + value);
+}
+
 std::filesystem::path findEnvFile() {
     auto dir = std::filesystem::current_path();
     while (!dir.empty()) {

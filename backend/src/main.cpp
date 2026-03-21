@@ -2,6 +2,6 @@
 #include <filesystem>
 #include <SteamAnalysis/clients/SteamWebApiClient.h>
 
-int main() {	
+int main() {
 	return 0;
 }
