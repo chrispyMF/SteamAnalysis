@@ -46,3 +46,6 @@ uploads/
 
 # env file
 .env
+
+# log file
+log.txt

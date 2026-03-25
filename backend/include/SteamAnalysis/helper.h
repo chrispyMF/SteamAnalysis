@@ -5,14 +5,16 @@
 #include <fstream>
 #include <filesystem>
 #include <unordered_map>
+#include <regex>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output);
 std::string buildQuery(const std::string& key, const std::string& value);
+std::string sanitizeUrl(const std::string& url);
 
 // temporary way to get API key until we deploy
-std::filesystem::path findEnvFile();
+std::filesystem::path findFile(const std::string& fileName);
 std::string loadEnvFile(const std::string& file);
 

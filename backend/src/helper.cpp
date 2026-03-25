@@ -1,4 +1,4 @@
-#include <SteamAnalysis/clients/helper.h>
+#include <SteamAnalysis/helper.h>
 
 size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* output) {
     size_t totalSize = size * nmemb;
@@ -11,16 +11,20 @@ std::string buildQuery(const std::string& key, const std::string& value) {
     return query.append(key + "=" + value);
 }
 
-std::filesystem::path findEnvFile() {
+std::string sanitizeUrl(const std::string& url) {
+    return std::regex_replace(url, std::regex(R"((key=)[^&]+)"), "$1****");
+}
+
+std::filesystem::path findFile(const std::string& fileName) {
     auto dir = std::filesystem::current_path();
     while (!dir.empty()) {
-        auto candidate = dir / ".env";
+        auto candidate = dir / fileName;
         if (std::filesystem::exists(candidate)) {
             return candidate;
         }
         dir = dir.parent_path();
     }
-    throw std::runtime_error(".env file not found");
+    throw std::runtime_error("File not found");
 }
 
 std::string loadEnvFile(const std::string& file) {

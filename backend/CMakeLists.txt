@@ -11,7 +11,8 @@ add_executable(steamanalysis
     src/main.cpp
     src/test.cpp
     src/clients/SteamWebApiClient.cpp
-    src/clients/helper.cpp
+    src/helper.cpp
+    src/logging/logger.cpp
 )
 
 add_library(nlohmann INTERFACE)
