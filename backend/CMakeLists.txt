@@ -8,11 +8,13 @@ find_package(Drogon CONFIG REQUIRED)
 find_package(CURL REQUIRED)
 
 add_executable(steamanalysis
-    src/main.cpp
-    src/test.cpp
-    src/clients/SteamWebApiClient.cpp
-    src/helper.cpp
-    src/logging/logger.cpp
+    src/Main.cpp
+    src/Test.cpp
+    src/Helper.cpp
+    src/logging/Logger.cpp
+    src/http/HttpClient.cpp
+    src/steam/SteamWebApiClient.cpp
+    src/steam/models/SteamPlayer.cpp
 )
 
 add_library(nlohmann INTERFACE)

@@ -4,7 +4,7 @@
 #include <mutex>
 #include <string>
 #include <iostream>
-#include <SteamAnalysis/helper.h>
+#include <SteamAnalysis/Helper.h>
 
 enum class LogLevel {
 	Debug,
@@ -21,6 +21,7 @@ public:
 	void info(const std::string& message);
 	void warn(const std::string& message);
 	void error(const std::string& message);
+
 private:
 	LogLevel minLevel_;
 	std::ofstream file_;

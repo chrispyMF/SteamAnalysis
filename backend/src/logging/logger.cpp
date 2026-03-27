@@ -1,4 +1,4 @@
-#include <SteamAnalysis/logging/logger.h>
+#include <SteamAnalysis/logging/Logger.h>
 
 Logger::Logger(LogLevel minLevel, const std::string& filePath)
 	: minLevel_(minLevel) {

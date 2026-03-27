@@ -5,7 +5,7 @@
 #include <nlohmann/json.hpp>
 #include <drogon/drogon.h>
 #include <curl/curl.h>
-#include <SteamAnalysis/helper.h>
+#include <SteamAnalysis/Helper.h>
 
 void test(); 
 
