@@ -42,3 +42,12 @@ void SteamPlayer::setOwnedGames(OwnedGames games) {
 void SteamPlayer::setRecentlyPlayedGames(RecentlyPlayedGames games) {
 	recentlyPlayedGames_ = games;
 }
+
+std::string SteamPlayer::toString() {
+	return	"Steam Username: " + summary().value().personaName +
+			"\n\tSteam ID: " + summary().value().steamId +
+			"\n\tAvatar: " + summary().value().avatarFull + 
+			"\n\tProfile URL: " + summary().value().profileUrl +
+			"\n\tGames: " + std::to_string(ownedGames().value().gameCount) + 
+			"\n\tRecently Played Games: " + std::to_string(recentlyPlayedGames().value().gameCount);
+}

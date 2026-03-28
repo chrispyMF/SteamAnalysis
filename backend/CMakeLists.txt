@@ -15,6 +15,7 @@ add_executable(steamanalysis
     src/http/HttpClient.cpp
     src/steam/SteamWebApiClient.cpp
     src/steam/models/SteamPlayer.cpp
+    src/steam/SteamPlayerService.cpp
 )
 
 add_library(nlohmann INTERFACE)

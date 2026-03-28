@@ -55,6 +55,9 @@ public:
 	void setOwnedGames(OwnedGames games);
 	void setRecentlyPlayedGames(RecentlyPlayedGames games);	
 
+	// to string
+	std::string toString();
+
 private:
 	std::string steamId_;
 
