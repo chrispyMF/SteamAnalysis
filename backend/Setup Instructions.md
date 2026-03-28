@@ -56,10 +56,16 @@ C:\dev\vcpkg\installed\x64-windows\debug\bin
 C:\dev\vcpkg\installed\x64-windows\debug\lib
 ```
 
+### Installing libcurl
+Install libcurl through vcpkg:
+```bash
+vcpkg install curl
+```
+
 ## Linux
 
 ### Library Dependencies
-First you need to install the library dependencies:
+First you need to install the Drogon library dependencies:
 - jsoncpp
   ```bash 
   sudo apt install libjsoncpp-dev 
@@ -89,6 +95,13 @@ cd build
 cmake ..
 make && sudo make install 
 ```
+
+### Installing libcurl
+Install through package manager. The exact command to use changes depending on you Linux distro.
+```bash
+sudo apt install libcurl14-openssl-dev
+```
+
 ---
 
 # Building Executable
