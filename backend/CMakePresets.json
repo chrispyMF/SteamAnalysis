@@ -1,0 +1,50 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "vs-base",
+      "hidden": true,
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build",
+      "installDir": "${sourceDir}/install",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      }
+    },
+    {
+      "name": "vs-debug",
+      "inherits": "vs-base"
+    },
+    {
+      "name": "vs-release",
+      "inherits": "vs-base"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-debug",
+      "configurePreset": "vs-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-release",
+      "configurePreset": "vs-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "build-relwithdebinfo",
+      "configurePreset": "vs-release",
+      "configuration": "RelWithDebInfo"
+    },
+    {
+      "name": "build-minsizerel",
+      "configurePreset": "vs-release",
+      "configuration": "MinSizeRel"
+    }
+  ]
+}

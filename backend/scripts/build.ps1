@@ -42,7 +42,7 @@ $cmakeArgs = @(
   "-S", $RootDir,
   "-B", $BuildDir,
   "-DCMAKE_BUILD_TYPE=$Config",
-  "-DCMAKE_INSTALL_PREFIX=$InstallDir"
+  "-DCMAKE_INSTALL_PREFIX=$InstallDir",
   "-DCMAKE_TOOLCHAIN_FILE=$VcpkgCmake"
 )
 
