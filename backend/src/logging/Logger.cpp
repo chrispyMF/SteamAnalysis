@@ -27,7 +27,7 @@ bool Logger::shouldLog(LogLevel level) const {
 	return static_cast<int>(level) >= static_cast<int>(minLevel_);
 }
 
-std::string Logger::levelToString(LogLevel level) const {
+std::string Logger::logLevelToString(LogLevel level) const {
 	switch (level) {
 		case LogLevel::Debug:
 			return "DEBUG";
@@ -44,9 +44,12 @@ std::string Logger::levelToString(LogLevel level) const {
 std::string Logger::timestamp() const {
 	std::time_t now = std::time(nullptr);
 	std::tm localtime{};
+
 #ifdef _WIN32
+	// localtime_s() available only on Windows
 	localtime_s(&localtime, &now);
 #else
+	// localtime_r() available only on Linux, macOS, UNIX
 	localtime_r(&now, &localtime);
 #endif
 	
@@ -61,7 +64,7 @@ void Logger::log(LogLevel level, const std::string& message) {
 	}
 
 	std::lock_guard<std::mutex> lock(mutex_);
-	std::string line = "[" + timestamp() + "] [" + levelToString(level) + "] " + message;
+	std::string line = "[" + timestamp() + "] [" + logLevelToString(level) + "] " + message;
 
 	std::cout << line << std::endl;
 	if (file_.is_open()) {
