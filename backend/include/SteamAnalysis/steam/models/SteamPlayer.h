@@ -6,16 +6,19 @@
 #include <utility>
 #include <SteamAnalysis/steam/SteamWebApiClient.h>
 
+/// Struct to store response from GetPlayerSummaries method from Steam API.
 struct PlayerSummary {
 	std::string steamId = "";
-	std::string personaName = "";
+	std::string personaName = "";	// Steam username
 	std::string profileUrl = "";
-	std::string avatar = "";
+	std::string avatar = "";		// Steam profile picture
 	std::string avatarMedium = "";
 	std::string avatarFull = "";
 	std::string locCountryCode = "";
 };
 
+/// Struct that represents one Steam game.
+/// Utilized by OwnedGames and RecentlyPlayedGames structs.
 struct Game {
 	std::string name = "";
 	std::string imgIconUrl = "";
@@ -24,16 +27,21 @@ struct Game {
 	int playtimeTwoWeeks = 0;
 };
 
+/// Struct to store response from GetOwnedGames method from Steam API.
 struct OwnedGames {
 	int gameCount = 0;
 	std::vector<Game> gameList = {};
 };
 
+/// Struct to store response from GetRecentlyPlayedGames method from Steam API.
 struct RecentlyPlayedGames {
 	int gameCount = 0;
 	std::vector<Game> gameList = {};
 };
 
+/// Class that represents a Steam user.
+/// Combines information obtained from GetPlayerSummaries, 
+/// GetOwnedGames, and GetRecentlyPlayedGames methods from Steam API.
 class SteamPlayer {
 public:
 	explicit SteamPlayer(std::string steamId);
@@ -55,7 +63,6 @@ public:
 	void setOwnedGames(OwnedGames games);
 	void setRecentlyPlayedGames(RecentlyPlayedGames games);	
 
-	// to string
 	std::string toString();
 
 private:

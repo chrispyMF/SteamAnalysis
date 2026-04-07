@@ -31,6 +31,7 @@ HttpResult CurlHttpClient::get(const std::string& url) {
 
 	CURLcode res = curl_easy_perform(curl);
 
+	// save elapsed time in milliseconds
 	auto end = std::chrono::steady_clock::now();
 	auto durationMs = 
 		std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
