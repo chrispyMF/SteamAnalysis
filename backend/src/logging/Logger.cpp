@@ -1,5 +1,17 @@
 #include <SteamAnalysis/logging/Logger.h>
 
+Logger::Logger()
+	: minLevel_(LogLevel::Info)
+{
+	file_.open(DEFAULT_PATH, std::ios::app);
+}
+
+Logger::Logger(LogLevel minLevel)
+	: minLevel_(minLevel)
+{
+	file_.open(DEFAULT_PATH, std::ios::app);
+}
+
 Logger::Logger(LogLevel minLevel, const std::string& filePath)
 	: minLevel_(minLevel) {
 	if (!filePath.empty()) {

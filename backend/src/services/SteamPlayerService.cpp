@@ -1,4 +1,4 @@
-#include <SteamAnalysis/steam/SteamPlayerService.h>
+#include <SteamAnalysis/services/SteamPlayerService.h>
 
 SteamPlayerService::SteamPlayerService(SteamApiClient& apiClient) 
 	:apiClient_(apiClient) {}

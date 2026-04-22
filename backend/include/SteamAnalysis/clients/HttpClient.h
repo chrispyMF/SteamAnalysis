@@ -4,7 +4,7 @@
 #include <string>
 #include <atomic>
 #include <curl/curl.h>
-#include <SteamAnalysis/Helper.h>
+#include <SteamAnalysis/utils/Helper.h>
 #include <SteamAnalysis/logging/Logger.h>
 
 enum class ApiError {

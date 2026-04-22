@@ -1,8 +1,8 @@
 #pragma once
 
 #include <string>
-#include <SteamAnalysis/steam/SteamWebApiClient.h>
-#include <SteamAnalysis/steam/models/SteamPlayer.h>
+#include <SteamAnalysis/clients/SteamWebApiClient.h>
+#include <SteamAnalysis/models/SteamPlayer.h>
 
 /// Class that makes API requests and stores information
 /// in a SteamPlayer object.

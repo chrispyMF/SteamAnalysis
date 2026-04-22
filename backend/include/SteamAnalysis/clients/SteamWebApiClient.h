@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 #include <nlohmann/json.hpp>
-#include <SteamAnalysis/Helper.h>
-#include <SteamAnalysis/http/HttpClient.h>
+#include <SteamAnalysis/utils/Helper.h>
+#include <SteamAnalysis/clients/HttpClient.h>
 #include <SteamAnalysis/logging/Logger.h>
 
 using json = nlohmann::json;

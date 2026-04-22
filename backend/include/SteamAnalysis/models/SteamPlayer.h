@@ -4,7 +4,7 @@
 #include <optional>
 #include <vector>
 #include <utility>
-#include <SteamAnalysis/steam/SteamWebApiClient.h>
+#include <SteamAnalysis/clients/SteamWebApiClient.h>
 
 /// Struct to store response from GetPlayerSummaries method from Steam API.
 struct PlayerSummary {

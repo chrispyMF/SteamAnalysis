@@ -1,15 +1,13 @@
 #include <iostream>
 #include <filesystem>
-#include <SteamAnalysis/steam/SteamWebApiClient.h>
-#include <SteamAnalysis/steam/models/SteamPlayer.h>
-#include <SteamAnalysis/steam/SteamPlayerService.h>
+#include <SteamAnalysis/clients/SteamWebApiClient.h>
+#include <SteamAnalysis/models/SteamPlayer.h>
+#include <SteamAnalysis/services/SteamPlayerService.h>
 #include <SteamAnalysis/logging/Logger.h>
+#include <drogon/HttpAppFramework.h>
 
 int main() {
-	Logger logFile(LogLevel::Debug, findFile("log.txt").string());
-	SteamApiClient client(logFile);
-	SteamPlayerService service(client);
-	SteamPlayer player = service.loadPlayer("");	// place steam id here
-	std::cout << player.toString() << std::endl;
+	drogon::app().addListener("0.0.0.0", 80);	// localhost temporarily
+	drogon::app().run();
 	return 0;
 }

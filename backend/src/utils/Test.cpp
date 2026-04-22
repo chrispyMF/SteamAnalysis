@@ -1,4 +1,4 @@
-#include <SteamAnalysis/test.h>
+#include <SteamAnalysis/utils/Test.h>
 
 using json = nlohmann::json;
 

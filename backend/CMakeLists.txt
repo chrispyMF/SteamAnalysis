@@ -9,13 +9,13 @@ find_package(CURL REQUIRED)
 
 add_executable(steamanalysis
     src/Main.cpp
-    src/Test.cpp
-    src/Helper.cpp
+    src/utils/Test.cpp
+    src/utils/Helper.cpp
     src/logging/Logger.cpp
-    src/http/HttpClient.cpp
-    src/steam/SteamWebApiClient.cpp
-    src/steam/models/SteamPlayer.cpp
-    src/steam/SteamPlayerService.cpp
+    src/clients/HttpClient.cpp
+    src/clients/SteamWebApiClient.cpp
+    src/models/SteamPlayer.cpp
+    src/services/SteamPlayerService.cpp 
 )
 
 add_library(nlohmann INTERFACE)

@@ -4,7 +4,7 @@
 #include <mutex>
 #include <string>
 #include <iostream>
-#include <SteamAnalysis/Helper.h>
+#include <SteamAnalysis/utils/Helper.h>
 
 /// Specify how much information you want to be logged.  
 enum class LogLevel {
@@ -17,7 +17,11 @@ enum class LogLevel {
 /// Class used to log information like debug info, errors, or warnings. 
 class Logger {
 public:
+	Logger();
+	explicit Logger(LogLevel minLevel);
 	explicit Logger(LogLevel minLevel, const std::string& filepath);
+
+	const std::string& DEFAULT_PATH = findFile("log.txt").string();
 	
 	/// Log detailed developer info.
 	/// @param message Message string that will be added to the log in the log file.

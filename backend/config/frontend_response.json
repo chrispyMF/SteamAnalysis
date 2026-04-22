@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": {
+    "steamId": "",
+    "username": "",
+    "profileUrl": "",
+    "avatar": "",
+    "recommendations": [
+      {
+        "name": "",
+        "appId": "",
+        "imgIconUrl": "",
+        "playtimeForever": "",
+        "playtime2Weeks": ""
+      },
+      {
+        "name": "",
+        "appId": "",
+        "imgIconUrl": "",
+        "playtimeForever": "",
+        "playtime2Weeks": ""
+      }
+    ]
+  },
+  "error": null
+}

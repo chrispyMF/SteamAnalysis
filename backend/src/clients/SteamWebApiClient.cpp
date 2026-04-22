@@ -1,4 +1,4 @@
-#include <SteamAnalysis/steam/SteamWebApiClient.h>
+#include <SteamAnalysis/clients/SteamWebApiClient.h>
 
 SteamApiClient::SteamApiClient(Logger& logger)
 	: logger_(logger), http_(logger){}

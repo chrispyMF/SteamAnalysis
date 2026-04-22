@@ -1,4 +1,4 @@
-#include <SteamAnalysis/steam/models/SteamPlayer.h>
+#include <SteamAnalysis/models/SteamPlayer.h>
 
 SteamPlayer::SteamPlayer(std::string steamId) 
 	: steamId_(steamId) {}

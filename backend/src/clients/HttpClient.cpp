@@ -1,4 +1,4 @@
-#include <SteamAnalysis/http/HttpClient.h>
+#include <SteamAnalysis/clients/HttpClient.h>
 
 CurlHttpClient::CurlHttpClient(Logger& logger)
 	: logger_(logger) {}
